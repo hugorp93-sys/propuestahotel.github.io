@@ -3,444 +3,108 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Hotel Real San Juan</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Montserrat',sans-serif;overflow-x:hidden;background:#fff}
+.hero{background:#0f4b3d;min-height:900px;display:flex;align-items:center;gap:60px;padding:50px}
+.hero-text{flex:1;color:#fff}
+.bienvenida{letter-spacing:10px;font-size:20px;margin-bottom:60px;font-weight:600}
+.hotel{font-size:52px;margin-bottom:40px;font-weight:300}
+.logo{font-family:'Cormorant Garamond',serif;font-size:130px;line-height:.9;font-style:italic}
+.hero-image,.zempoala-image,.contact-image{flex:1}
+.hero-image img,.zempoala-image img,.contact-image img,.room-image img{
+width:100%;height:100%;object-fit:cover;display:block;
+box-shadow:0 10px 30px rgba(0,0,0,.15)}
+.hero-image img{height:820px}
+.rooms{background:#bf8b68;padding:100px 8%}
+.rooms h2{color:#fff;font-size:70px;font-weight:300;margin-bottom:50px}
+.room-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:30px}
+.room-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,.10);transition:.3s}
+.room-card:hover{transform:translateY(-8px)}
+.room-image{height:420px;overflow:hidden}
+.room-content{padding:30px}
+.room-info{color:#bf8b68;font-size:20px;font-weight:600;margin-bottom:15px}
+.room-title{color:#0f4b3d;font-size:42px;margin-bottom:20px}
+.room-price{color:#bf8b68;font-size:22px;font-weight:600}
+.zempoala{background:#f5f5f5;padding:120px 8%;display:flex;align-items:center;gap:60px}
+.zempoala-text{flex:1}
+.zempoala-text h2{font-size:72px;color:#0f4b3d;margin-bottom:30px}
+.zempoala-text p{font-size:24px;line-height:1.8}
+.zempoala-image img{height:650px}
+.contact{background:#0f4b3d;padding:100px 8%;display:flex;gap:80px;color:#fff}
+.contact-info{flex:1}
+.contact-info h2{font-size:72px;font-weight:300;margin-bottom:80px}
+.contact-block{margin-bottom:50px}
+.contact-block h3{font-size:32px;letter-spacing:4px;margin-bottom:15px}
+.contact-block p{font-size:22px}
+.socials{display:flex;gap:15px;margin-top:20px}
+.social{width:55px;height:55px;border-radius:50%;background:#fff;color:#0f4b3d;display:flex;align-items:center;justify-content:center;text-decoration:none;font-weight:bold}
+.contact-image img{height:700px}
+.whatsapp{position:fixed;right:15px;bottom:15px;background:#25D366;color:#fff;padding:15px 22px;border-radius:50px;text-decoration:none;font-weight:bold;z-index:1000}
+@media (max-width:992px){
+.hero,.zempoala,.contact{flex-direction:column;gap:30px;padding:40px 20px}
+.hero{min-height:auto}
+.hero-text,.zempoala-text,.contact-info{text-align:center}
+.bienvenida{font-size:14px;letter-spacing:6px;margin-bottom:20px}
+.hotel{font-size:32px;margin-bottom:15px}
+.logo{font-size:70px}
+.rooms,.zempoala,.contact{padding:50px 20px}
+.rooms h2,.zempoala-text h2,.contact-info h2{font-size:38px;text-align:center;margin-bottom:30px}
+.room-grid{grid-template-columns:1fr}
+.room-image{height:260px}
+.room-content{padding:20px}
+.room-title{font-size:28px}
+.room-price,.contact-block p,.zempoala-text p{font-size:18px}
+.hero-image img,.contact-image img{height:320px}
+.zempoala-image img{height:280px}
+.socials{justify-content:center}
 }
-
-html{
-    scroll-behavior:smooth;
+@media (max-width:480px){
+.logo{font-size:55px}
+.hero-image img,.zempoala-image img,.contact-image img{height:220px}
+.room-image{height:220px}
 }
-
-body{
-    font-family:'Montserrat',sans-serif;
-    overflow-x:hidden;
-}
-
-/* =======================
-   PORTADA
-======================= */
-
-.hero{
-    background:#0f4b3d;
-    min-height:900px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:60px;
-    padding:50px;
-}
-
-.hero-text{
-    flex:1;
-    color:white;
-}
-
-.bienvenida{
-    letter-spacing:10px;
-    font-size:20px;
-    margin-bottom:60px;
-    font-weight:600;
-}
-
-.hotel{
-    font-size:52px;
-    margin-bottom:40px;
-    font-weight:300;
-}
-
-.logo{
-    font-family:'Cormorant Garamond',serif;
-    font-size:130px;
-    line-height:0.9;
-    font-style:italic;
-}
-
-.hero-image{
-    flex:1;
-}
-
-.hero-image img{
-    width:100%;
-    height:820px;
-    object-fit:cover;
-    display:block;
-}
-
-/* =======================
-   HABITACIONES
-======================= */
-
-.rooms{
-    background:#bf8b68;
-    padding:100px 8%;
-}
-
-.rooms h2{
-    color:white;
-    font-size:70px;
-    font-weight:300;
-    margin-bottom:50px;
-}
-
-.room-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:30px;
-}
-
-.room-card{
-    background:white;
-    overflow:hidden;
-    transition:.3s;
-}
-
-.room-card:hover{
-    transform:translateY(-8px);
-}
-
-.room-image{
-    height:420px;
-    overflow:hidden;
-}
-
-.room-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
-}
-
-.room-content{
-    padding:30px;
-}
-
-.room-info{
-    color:#bf8b68;
-    font-size:20px;
-    font-weight:600;
-    margin-bottom:15px;
-}
-
-.room-title{
-    color:#0f4b3d;
-    font-size:42px;
-    margin-bottom:20px;
-}
-
-.room-price{
-    color:#bf8b68;
-    font-size:22px;
-    font-weight:600;
-}
-
-/* =======================
-   ZEMPOALA
-======================= */
-
-.zempoala{
-    background:#f5f5f5;
-    padding:120px 8%;
-    display:flex;
-    align-items:center;
-    gap:60px;
-}
-
-.zempoala-text{
-    flex:1;
-}
-
-.zempoala-text h2{
-    font-size:72px;
-    color:#0f4b3d;
-    font-weight:400;
-    margin-bottom:30px;
-}
-
-.zempoala-text p{
-    font-size:24px;
-    line-height:1.8;
-}
-
-.zempoala-image{
-    flex:1;
-}
-
-.zempoala-image img{
-    width:100%;
-    height:650px;
-    object-fit:cover;
-    display:block;
-}
-
-/* =======================
-   CONTACTO
-======================= */
-
-.contact{
-    background:#0f4b3d;
-    padding:100px 8%;
-    display:flex;
-    gap:80px;
-    color:white;
-}
-
-.contact-info{
-    flex:1;
-}
-
-.contact-info h2{
-    font-size:72px;
-    font-weight:300;
-    margin-bottom:80px;
-}
-
-.contact-block{
-    margin-bottom:50px;
-}
-
-.contact-block h3{
-    font-size:32px;
-    letter-spacing:4px;
-    margin-bottom:15px;
-    font-weight:400;
-}
-
-.contact-block p{
-    font-size:22px;
-}
-
-.socials{
-    display:flex;
-    gap:15px;
-    margin-top:20px;
-}
-
-.social{
-    width:55px;
-    height:55px;
-    border-radius:50%;
-    background:white;
-    color:#0f4b3d;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-.contact-image{
-    flex:1;
-}
-
-.contact-image img{
-    width:100%;
-    height:700px;
-    object-fit:cover;
-    display:block;
-}
-
-/* =======================
-   WHATSAPP
-======================= */
-
-.whatsapp{
-    position:fixed;
-    right:25px;
-    bottom:25px;
-    background:#25D366;
-    color:white;
-    padding:15px 25px;
-    border-radius:50px;
-    text-decoration:none;
-    font-weight:bold;
-    box-shadow:0 5px 20px rgba(0,0,0,.3);
-    z-index:1000;
-}
-
-/* =======================
-   RESPONSIVE
-======================= */
-
-@media(max-width:992px){
-
-    .hero,
-    .zempoala,
-    .contact{
-        flex-direction:column;
-    }
-
-    .logo{
-        font-size:80px;
-    }
-
-    .hotel,
-    .rooms h2,
-    .zempoala-text h2,
-    .contact-info h2{
-        font-size:42px;
-    }
-
-    .room-title{
-        font-size:32px;
-    }
-
-    .hero-image img,
-    .zempoala-image img,
-    .contact-image img{
-        height:400px;
-    }
-
-    .room-image{
-        height:300px;
-    }
-
-    .zempoala-text p{
-        font-size:18px;
-    }
-}
-
 </style>
 </head>
 <body>
-
 <section class="hero">
-
-    <div class="hero-text">
-
-        <div class="bienvenida">
-            BIENVENIDOS A
-        </div>
-
-        <div class="hotel">
-            HOTEL
-        </div>
-
-        <div class="logo">
-            Real San<br>Juan
-        </div>
-
-    </div>
-
-    <div class="hero-image">
-        <img src="imagenes/hotel-real-san-juan.jpg" alt="Hotel Real San Juan">
-    </div>
-
+<div class="hero-text">
+<div class="bienvenida">BIENVENIDOS A</div>
+<div class="hotel">HOTEL</div>
+<div class="logo">Real San<br>Juan</div>
+</div>
+<div class="hero-image"><img src="imagenes/hotel-real-san-juan.jpg" alt=""></div>
 </section>
 
 <section class="rooms">
-
-    <h2>HABITACIONES</h2>
-
-    <div class="room-grid">
-
-        <div class="room-card">
-            <div class="room-image">
-                <img src="imagenes/habitacion-sencilla.jpg" alt="Suite Sencilla">
-            </div>
-
-            <div class="room-content">
-                <div class="room-info">1 huésped / 1 cama</div>
-                <div class="room-title">Suite Sencilla</div>
-                <div class="room-price">Desde $500 la noche</div>
-            </div>
-        </div>
-
-        <div class="room-card">
-            <div class="room-image">
-                <img src="imagenes/suite-doble.jpg" alt="Suite Doble">
-            </div>
-
-            <div class="room-content">
-                <div class="room-info">2 huéspedes / 1 cama</div>
-                <div class="room-title">Suite Doble</div>
-                <div class="room-price">Desde $900 la noche</div>
-            </div>
-        </div>
-
-        <div class="room-card">
-            <div class="room-image">
-                <img src="imagenes/king-suite.jpg" alt="King Suite">
-            </div>
-
-            <div class="room-content">
-                <div class="room-info">4 huéspedes / 2 camas</div>
-                <div class="room-title">King Suite</div>
-                <div class="room-price">Desde $1600 la noche</div>
-            </div>
-        </div>
-
-    </div>
-
+<h2>HABITACIONES</h2>
+<div class="room-grid">
+<div class="room-card"><div class="room-image"><img src="imagenes/habitacion-sencilla.jpg"></div><div class="room-content"><div class="room-info">1 huésped / 1 cama</div><div class="room-title">Suite Sencilla</div><div class="room-price">Desde $500 la noche</div></div></div>
+<div class="room-card"><div class="room-image"><img src="imagenes/suite-doble.jpg"></div><div class="room-content"><div class="room-info">2 huéspedes / 1 cama</div><div class="room-title">Suite Doble</div><div class="room-price">Desde $900 la noche</div></div></div>
+<div class="room-card"><div class="room-image"><img src="imagenes/king-suite.jpg"></div><div class="room-content"><div class="room-info">4 huéspedes / 2 camas</div><div class="room-title">King Suite</div><div class="room-price">Desde $1600 la noche</div></div></div>
+</div>
 </section>
 
 <section class="zempoala">
-
-    <div class="zempoala-text">
-
-        <h2>
-            CONOCE<br>ZEMPOALA
-        </h2>
-
-        <p>
-            Durante tu alojamiento con nosotros, disfruta de la magia de este maravilloso Pueblo Mágico y aprovecha al máximo tu estancia. Vive sus tradiciones, recorre sus calles y crea recuerdos inolvidables.
-        </p>
-
-    </div>
-
-    <div class="zempoala-image">
-        <img src="imagenes/zempoala.jpg" alt="Zempoala">
-    </div>
-
+<div class="zempoala-text">
+<h2>CONOCE<br>ZEMPOALA</h2>
+<p>Durante tu alojamiento con nosotros, disfruta de la magia de este maravilloso Pueblo Mágico y aprovecha al máximo tu estancia. Vive sus tradiciones, recorre sus calles y crea recuerdos inolvidables.</p>
+</div>
+<div class="zempoala-image"><img src="imagenes/zempoala.jpg"></div>
 </section>
 
 <section class="contact">
-
-    <div class="contact-info">
-
-        <h2>RESERVA TU ESTANCIA</h2>
-
-        <div class="contact-block">
-            <h3>TELÉFONO</h3>
-            <p>(771) 263-1675</p>
-        </div>
-
-        <div class="contact-block">
-            <h3>EMAIL</h3>
-            <p>hotelRealSanJuan@gmail.com</p>
-        </div>
-
-        <div class="contact-block">
-            <h3>REDES SOCIALES</h3>
-
-            <div class="socials">
-                <a class="social" href="#">f</a>
-                <a class="social" href="#">IG</a>
-            </div>
-
-        </div>
-
-    </div>
-
-    <div class="contact-image">
-        <img src="imagenes/hotel-fin.jpg" alt="Hotel Real San Juan Noche">
-    </div>
-
+<div class="contact-info">
+<h2>RESERVA TU ESTANCIA</h2>
+<div class="contact-block"><h3>TELÉFONO</h3><p>(771) 263-1675</p></div>
+<div class="contact-block"><h3>EMAIL</h3><p>hotelRealSanJuan@gmail.com</p></div>
+<div class="contact-block"><h3>REDES SOCIALES</h3><div class="socials"><a class="social" href="#">f</a><a class="social" href="#">IG</a></div></div>
+</div>
+<div class="contact-image"><img src="imagenes/hotel-fin.jpg"></div>
 </section>
 
-<a class="whatsapp"
-href="https://wa.me/527712631675"
-target="_blank">
-📱 Reservar por WhatsApp
-</a>
-
+<a class="whatsapp" href="https://wa.me/527712631675">📱 Reservar por WhatsApp</a>
 </body>
 </html>
