@@ -4,107 +4,97 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hotel Real San Juan</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Montserrat',sans-serif;overflow-x:hidden;background:#fff}
-.hero{background:#0f4b3d;min-height:900px;display:flex;align-items:center;gap:60px;padding:50px}
-.hero-text{flex:1;color:#fff}
-.bienvenida{letter-spacing:10px;font-size:20px;margin-bottom:60px;font-weight:600}
-.hotel{font-size:52px;margin-bottom:40px;font-weight:300}
-.logo{font-family:'Cormorant Garamond',serif;font-size:130px;line-height:.9;font-style:italic}
-.hero-image,.zempoala-image,.contact-image{flex:1}
-.hero-image img,.zempoala-image img,.contact-image img,.room-image img{
-width:100%;height:100%;object-fit:cover;display:block;
-box-shadow:0 10px 30px rgba(0,0,0,.15)}
-.hero-image img{height:820px}
-.rooms{background:#bf8b68;padding:100px 8%}
-.rooms h2{color:#fff;font-size:70px;font-weight:300;margin-bottom:50px}
-.room-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:30px}
-.room-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,.10);transition:.3s}
-.room-card:hover{transform:translateY(-8px)}
-.room-image{height:420px;overflow:hidden}
-.room-content{padding:30px}
-.room-info{color:#bf8b68;font-size:20px;font-weight:600;margin-bottom:15px}
-.room-title{color:#0f4b3d;font-size:42px;margin-bottom:20px}
-.room-price{color:#bf8b68;font-size:22px;font-weight:600}
-.zempoala{background:#f5f5f5;padding:120px 8%;display:flex;align-items:center;gap:60px}
-.zempoala-text{flex:1}
-.zempoala-text h2{font-size:72px;color:#0f4b3d;margin-bottom:30px}
-.zempoala-text p{font-size:24px;line-height:1.8}
-.zempoala-image img{height:650px}
-.contact{background:#0f4b3d;padding:100px 8%;display:flex;gap:80px;color:#fff}
-.contact-info{flex:1}
-.contact-info h2{font-size:72px;font-weight:300;margin-bottom:80px}
-.contact-block{margin-bottom:50px}
-.contact-block h3{font-size:32px;letter-spacing:4px;margin-bottom:15px}
-.contact-block p{font-size:22px}
-.socials{display:flex;gap:15px;margin-top:20px}
-.social{width:55px;height:55px;border-radius:50%;background:#fff;color:#0f4b3d;display:flex;align-items:center;justify-content:center;text-decoration:none;font-weight:bold}
-.contact-image img{height:700px}
-.whatsapp{position:fixed;right:15px;bottom:15px;background:#25D366;color:#fff;padding:15px 22px;border-radius:50px;text-decoration:none;font-weight:bold;z-index:1000}
-@media (max-width:992px){
-.hero,.zempoala,.contact{flex-direction:column;gap:30px;padding:40px 20px}
-.hero{min-height:auto}
-.hero-text,.zempoala-text,.contact-info{text-align:center}
-.bienvenida{font-size:14px;letter-spacing:6px;margin-bottom:20px}
-.hotel{font-size:32px;margin-bottom:15px}
-.logo{font-size:70px}
-.rooms,.zempoala,.contact{padding:50px 20px}
-.rooms h2,.zempoala-text h2,.contact-info h2{font-size:38px;text-align:center;margin-bottom:30px}
-.room-grid{grid-template-columns:1fr}
-.room-image{height:260px}
-.room-content{padding:20px}
-.room-title{font-size:28px}
-.room-price,.contact-block p,.zempoala-text p{font-size:18px}
-.hero-image img,.contact-image img{height:320px}
-.zempoala-image img{height:280px}
-.socials{justify-content:center}
-}
-@media (max-width:480px){
-.logo{font-size:55px}
-.hero-image img,.zempoala-image img,.contact-image img{height:220px}
-.room-image{height:220px}
+*{margin:0;padding:0;box-sizing:border-box} html{scroll-behavior:smooth}
+body{font-family:Montserrat,sans-serif}
+header{position:fixed;top:0;width:100%;background:#0f4b3dee;color:#fff;display:flex;justify-content:space-between;padding:15px 5%;z-index:1000}
+nav a{color:#fff;text-decoration:none;margin-left:20px}
+.hero,.zempoala,.contact{display:flex;align-items:center;gap:50px;padding:100px 6%}
+.hero{background:#0f4b3d;color:#fff;min-height:100vh}
+.logo{font-family:"Cormorant Garamond",serif;font-size:120px;line-height:.9}
+.hero img,.zempoala img,.contact img{width:100%;height:100%;object-fit:cover;border-radius:14px}
+.hero .img{flex:1;height:700px}.hero .txt{flex:1}
+.btn{display:inline-block;background:#fff;color:#0f4b3d;padding:14px 28px;border-radius:40px;text-decoration:none;margin-top:25px;font-weight:600}
+.rooms{background:#bf8b68;padding:80px 6%}
+.rooms h2,.zempoala h2,.contact h2{font-size:56px;margin-bottom:30px}
+.rooms h2{color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
+.card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,.15)}
+.card img{width:100%;height:320px;object-fit:cover}
+.card div{padding:20px}
+.zempoala{background:#f5f5f5}
+.zempoala .img,.contact .img{flex:1;height:540px}
+.zempoala .txt,.contact .txt{flex:1}
+.contact{background:#0f4b3d;color:#fff}
+.gallery{padding:70px 6%;background:#fff}
+.gallery h2{text-align:center;margin-bottom:25px}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
+.gallery-grid img{width:100%;height:220px;object-fit:cover;border-radius:10px}
+.map{padding:70px 6%;background:#f4f4f4;text-align:center}
+.map iframe{width:100%;height:400px;border:0;border-radius:12px}
+footer{background:#082d24;color:#fff;text-align:center;padding:30px}
+.whatsapp{position:fixed;right:15px;bottom:15px;background:#25D366;color:#fff;padding:15px 20px;border-radius:40px;text-decoration:none}
+@media(max-width:768px){
+header{flex-direction:column;align-items:center}
+.hero,.zempoala,.contact{flex-direction:column;padding:90px 20px 40px}
+.logo{font-size:70px;text-align:center}
+.hero .img,.zempoala .img,.contact .img{height:280px;width:100%}
+.rooms h2,.zempoala h2,.contact h2{font-size:36px}
+nav{margin-top:10px}
 }
 </style>
 </head>
 <body>
-<section class="hero">
-<div class="hero-text">
-<div class="bienvenida">BIENVENIDOS A</div>
-<div class="hotel">HOTEL</div>
+<header>
+<div><strong>Real San Juan</strong></div>
+<nav><a href="#inicio">Inicio</a><a href="#habitaciones">Habitaciones</a><a href="#mapa">Mapa</a><a href="#contacto">Contacto</a></nav>
+</header>
+
+<section class="hero" id="inicio">
+<div class="txt">
+<p>BIENVENIDOS A</p>
 <div class="logo">Real San<br>Juan</div>
+<a class="btn" href="https://wa.me/527712631675">Reservar Ahora</a>
 </div>
-<div class="hero-image"><img src="imagenes/hotel-real-san-juan.jpg" alt=""></div>
+<div class="img"><img src="imagenes/hotel-real-san-juan.png"></div>
 </section>
 
-<section class="rooms">
-<h2>HABITACIONES</h2>
-<div class="room-grid">
-<div class="room-card"><div class="room-image"><img src="imagenes/habitacion-sencilla.jpg"></div><div class="room-content"><div class="room-info">1 huésped / 1 cama</div><div class="room-title">Suite Sencilla</div><div class="room-price">Desde $500 la noche</div></div></div>
-<div class="room-card"><div class="room-image"><img src="imagenes/suite-doble.jpg"></div><div class="room-content"><div class="room-info">2 huéspedes / 1 cama</div><div class="room-title">Suite Doble</div><div class="room-price">Desde $900 la noche</div></div></div>
-<div class="room-card"><div class="room-image"><img src="imagenes/king-suite.jpg"></div><div class="room-content"><div class="room-info">4 huéspedes / 2 camas</div><div class="room-title">King Suite</div><div class="room-price">Desde $1600 la noche</div></div></div>
+<section class="rooms" id="habitaciones">
+<h2>Habitaciones</h2>
+<div class="grid">
+<div class="card"><img src="imagenes/habitacion-sencilla.jpg"><div><h3>Suite Sencilla</h3><p>1 huésped / 1 cama</p></div></div>
+<div class="card"><img src="imagenes/suite-doble.jpg"><div><h3>Suite Doble</h3><p>2 huéspedes / 1 cama</p></div></div>
 </div>
 </section>
 
 <section class="zempoala">
-<div class="zempoala-text">
-<h2>CONOCE<br>ZEMPOALA</h2>
-<p>Durante tu alojamiento con nosotros, disfruta de la magia de este maravilloso Pueblo Mágico y aprovecha al máximo tu estancia. Vive sus tradiciones, recorre sus calles y crea recuerdos inolvidables.</p>
-</div>
-<div class="zempoala-image"><img src="imagenes/zempoala.jpg"></div>
+<div class="txt"><h2>Conoce Zempoala</h2><p>Durante tu alojamiento en Real San Juan, disfruta de la magia de este maravilloso pueblo magico y aprovecha al maximo tu estancia.
+    Vive sus tradiciones, recorre sus calles y crea recuerdo inolvidables.
+Para mayor informacion:<a href="https://pueblosmagicos.mexicodesconocido.com.mx/hidalgo/zempoala/" target="_blank">
+        <b><u>Click aqui</u></b>
+    </a></p></div>
+    <div class="txt"><p></p></div>
+<div class="img"><img src="imagenes/zempoala.jpg"></div>
 </section>
 
-<section class="contact">
-<div class="contact-info">
-<h2>RESERVA TU ESTANCIA</h2>
-<div class="contact-block"><h3>TELÉFONO</h3><p>(771) 263-1675</p></div>
-<div class="contact-block"><h3>EMAIL</h3><p>hotelRealSanJuan@gmail.com</p></div>
-<div class="contact-block"><h3>REDES SOCIALES</h3><div class="socials"><a class="social" href="https://www.facebook.com/profile.php?id=61568880577618">f</a><a class="social" href="https://www.instagram.com">IG</a></div></div>
-</div>
-<div class="contact-image"><img src="imagenes/hotel-fin.jpg"></div>
+
+
+<section class="map" id="mapa">
+<h2>Ubicación</h2>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1157.8851258857535!2d-98.67426004567746!3d19.904917998841974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1bb003955ba27%3A0x5146183e7b894348!2sHotel%20Real%20San%20Juan!5e1!3m2!1ses-419!2smx!4v1781804636650!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </section>
 
-<a class="whatsapp" href="https://wa.me/527712631675">📱 Reservar por WhatsApp</a>
+<section class="contact" id="contacto">
+<div class="txt">
+<h2>Reserva tu estancia</h2>
+<p>Teléfono: (771) 263-1675</p><br>
+<p>Email: hotelRealSanJuan@gmail.com</p>
+</div>
+<div class="img"><img src="imagenes/hotel-fin.jpg"></div>
+</section>
+
+<footer>© Hotel Real San Juan</footer>
+<a class="whatsapp" href="https://wa.me/527712631675">WhatsApp</a>
 </body>
 </html>
